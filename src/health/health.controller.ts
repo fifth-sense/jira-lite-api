@@ -19,7 +19,6 @@ export class HealthController {
         try{
             await this.dataSource.query('SELECT 1 ');
             return {status: 'ready', database: 'Up'};
-
         }catch{
             throw new ServiceUnavailableException({satus:'not ready', database: 'down'})
         }
